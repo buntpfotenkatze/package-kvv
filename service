@@ -38,6 +38,7 @@ def regenerate():
     mapping = {
         "1"   : from_html("ed1c24"),
         "2"   : from_html("0071bc"),
+        "3"   : from_html("94713b"),
         "4"   : from_html("ffcb04"),
         "5"   : from_html("00c0f3"),
         "6"   : from_html("80c342"),
@@ -45,13 +46,21 @@ def regenerate():
         "S1"  : from_html("00a76d"),
         "S11" : from_html("00a76d"),
         "S2"  : from_html("a068aa"),
+        "S3"  : from_html("fede00"),
+        "S31" : from_html("00aa9b"),
+        "S32" : from_html("00aa9b"),
+        "S33" : from_html("86579f"),
         "S4"  : from_html("9f184c"),
         "S41" : from_html("9f184c"),
         "S5"  : from_html("f8aca5"),
-        "S51"  : from_html("f8aca5"),
-        "S52"  : from_html("f8aca5"),
+        "S51" : from_html("f8aca5"),
+        "S52" : from_html("f8aca5"),
+        "S6"  : from_html("2f2965"),
         "S7"  : from_html("ffff33"),
+        "S71" : from_html("ffff33"),
         "S8"  : from_html("4d4f23"),
+        "S81" : from_html("4d4f23"),
+        "S9"  : from_html("ffaca1"),
     }
 
     def parse(stop_info):
