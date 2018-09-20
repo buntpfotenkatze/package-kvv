@@ -79,6 +79,11 @@ function node.render()
             end
 
             stop_r, stop_g, stop_b = 1,1,1
+            if dep.platform == "1" then
+                arrow = " → "
+            else
+                arrow = " ← "
+            end
 
             if remaining < 5 then
                 colored:use{color = {dep.color_r, dep.color_g, dep.color_b, 1}}
@@ -88,8 +93,8 @@ function node.render()
 
                 if sys.now() % 6 < 2.5 and #dep.more > 0 then
                     CONFIG.font:write(120, y, dep.more, 60, 1,1,1,1)
-               	else 
-                    CONFIG.font:write(120, y, "→" .. dep.direction, 60, stop_r,stop_g,stop_b, 1)
+                else 
+                    CONFIG.font:write(120, y, arrow .. dep.direction, 60, stop_r,stop_g,stop_b, 1)
                 end
                 y = y + 60
                 CONFIG.font:write(120, y, time .. " " .. append , 45, 1,1,1,1)
@@ -103,7 +108,7 @@ function node.render()
                 if sys.now() % 6 < 2.5 and #dep.more > 0 then
                     CONFIG.font:write(250, y, dep.more, 30, 1,1,1,1)
                 else
-                    CONFIG.font:write(250, y, " → " .. dep.direction, 30, stop_r,stop_g,stop_b,1)
+                    CONFIG.font:write(250, y, arrow .. dep.direction, 30, stop_r,stop_g,stop_b,1)
                 end
                 y = y + 30
                 CONFIG.font:write(250, y, append , 25, 1,1,1,1)

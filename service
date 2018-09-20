@@ -73,6 +73,7 @@ def regenerate():
 
             date = now + timedelta(seconds = delta)
             direction = dep['destination']
+            platform = dep['direction']
 
             r, g, b = mapping.get(dep['route'], (0,0,0))
 
@@ -83,6 +84,7 @@ def regenerate():
                 symbol = dep['route'],
                 date = to_unixtimestamp(date),
                 direction = direction,
+                platform = platform,
                 nice_date = date.strftime('%H:%M'),
                 more = "",
                 stop = stop_info['stopName'],
