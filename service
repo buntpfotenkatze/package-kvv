@@ -48,6 +48,10 @@ def regenerate():
         "S4"  : from_html("9f184c"),
         "S41" : from_html("9f184c"),
         "S5"  : from_html("f8aca5"),
+        "S51"  : from_html("f8aca5"),
+        "S52"  : from_html("f8aca5"),
+        "S7"  : from_html("ffff33"),
+        "S8"  : from_html("4d4f23"),
     }
 
     def parse(stop_info):
