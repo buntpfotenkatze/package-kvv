@@ -86,13 +86,11 @@ function node.render()
                 colored:deactivate()
                 CONFIG.font:write(50 - #dep.symbol*18, y+16, dep.symbol, 70, 1,1,1,1)
 
-                local alpha = math.max(-1, math.min(1, -3 + math.sin(sys.now()) * 5.5)) * 0.5 + 0.5
-                if #dep.more > 0 then
-                    CONFIG.font:write(120, y, dep.more, 60, 1,1,1,alpha)
-                else
-                    CONFIG.font:write(120, y, dep.stop, 60, stop_r,stop_g,stop_b,alpha)
+                if sys.now() % 6 < 2.5 and #dep.more > 0 then
+                    CONFIG.font:write(120, y, dep.more, 60, 1,1,1,1)
+               	else 
+                    CONFIG.font:write(120, y, "→" .. dep.direction, 60, stop_r,stop_g,stop_b, 1)
                 end
-                CONFIG.font:write(120, y, "→" .. dep.direction, 60, stop_r,stop_g,stop_b, 1-alpha)
                 y = y + 60
                 CONFIG.font:write(120, y, time .. " " .. append , 45, 1,1,1,1)
                 y = y + 70
@@ -105,7 +103,7 @@ function node.render()
                 if sys.now() % 6 < 2.5 and #dep.more > 0 then
                     CONFIG.font:write(250, y, dep.more, 30, 1,1,1,1)
                 else
-                    CONFIG.font:write(250, y, dep.stop .. " → " .. dep.direction, 30, stop_r,stop_g,stop_b,1)
+                    CONFIG.font:write(250, y, " → " .. dep.direction, 30, stop_r,stop_g,stop_b,1)
                 end
                 y = y + 30
                 CONFIG.font:write(250, y, append , 25, 1,1,1,1)
