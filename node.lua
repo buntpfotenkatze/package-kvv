@@ -89,7 +89,7 @@ function node.render()
                 colored:use{color = {dep.color_r, dep.color_g, dep.color_b, 1}}
                 white:draw(0,y, 100,y + 100)
                 colored:deactivate()
-                CONFIG.font:write(50 - #dep.symbol*20, y+16, dep.symbol, 70, 1,1,1,1)
+                CONFIG.font:write(50 - #dep.symbol*23, y+16, dep.symbol, 70, 1,1,1,1)
 
                 if sys.now() % 6 < 2.5 and #dep.more > 0 then
                     CONFIG.font:write(120, y, dep.more, 60, 1,1,1,1)
