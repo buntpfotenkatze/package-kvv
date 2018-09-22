@@ -41,7 +41,7 @@ function node.render()
     for idx, dep in ipairs(departures) do
         if dep.date > now  - fadeout then
             if now > dep.date then
-                y = y - 120 / fadeout * (now - dep.date)
+                y = y - 130 / fadeout * (now - dep.date)
             end
         end
     end
