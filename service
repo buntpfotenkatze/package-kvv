@@ -114,7 +114,7 @@ def regenerate():
     # find next run
     for n, dep in enumerate(departures):
         for follow in islice(departures, n+1, None):
-            if dep['direction'] == follow['direction'] and \
+            if dep['platform'] == follow['platform'] and \
                     dep['stop'] == follow['stop'] and \
                     dep['symbol'] == follow['symbol']:
                 dep['next_date'] = follow['date']

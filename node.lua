@@ -66,16 +66,16 @@ function node.render()
                 if dep.next_date then
                     append = string.format("und in %d min", math.floor((dep.next_date - now)/60))
                 end
-            elseif remaining < 2 then
+            else --if remaining < 2 then
                 time = string.format("%d min", ((dep.date - now)/60))
                 if dep.next_nice_date then
                     append = "und wieder " .. math.floor((dep.next_date - dep.date)/60) .. " min später"
                 end
-            else
-                time = time -- .. " +" .. remaining
-                if dep.next_nice_date then
-                    append = "und wieder " .. dep.next_nice_date
-                end
+            --else
+            --    time = time -- .. " +" .. remaining
+            --    if dep.next_nice_date then
+            --        append = "und wieder " .. dep.next_nice_date
+            --    end
             end
 
             stop_r, stop_g, stop_b = 1,1,1
