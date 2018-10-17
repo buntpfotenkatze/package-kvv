@@ -66,16 +66,16 @@ function node.render()
                 if dep.next_date then
                     append = string.format("und in %d min", math.floor((dep.next_date - now)/60))
                 end
-            else --if remaining < 2 then
+            elseif remaining < 10 then
                 time = string.format("%d min", ((dep.date - now)/60))
                 if dep.next_nice_date then
                     append = "und wieder " .. math.floor((dep.next_date - dep.date)/60) .. " min später"
                 end
-            --else
-            --    time = time -- .. " +" .. remaining
-            --    if dep.next_nice_date then
-            --        append = "und wieder " .. dep.next_nice_date
-            --    end
+            else
+                time = time -- .. " +" .. remaining
+                if dep.next_nice_date then
+                    append = "und wieder " .. dep.next_nice_date
+                end
             end
 
             stop_r, stop_g, stop_b = 1,1,1
@@ -85,7 +85,7 @@ function node.render()
                 arrow = " ← "
             end
 
-            if remaining < 5 then
+            if remaining < 10 then
                 colored:use{color = {dep.color_r, dep.color_g, dep.color_b, 1}}
                 white:draw(0,y, 150,y + 100)
                 colored:deactivate()
