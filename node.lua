@@ -37,7 +37,8 @@ local fadeout = 5
 function node.render()
     CONFIG.background_color.clear()
     local now = unixnow()
-    local y = 23
+    local y = 73
+    CONFIG.font:write(10, 10, now, 50, 1,1,1,1)
     for idx, dep in ipairs(departures) do
         if dep.date > now  - fadeout then
             if now > dep.date then
