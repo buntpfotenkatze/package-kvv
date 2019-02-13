@@ -126,4 +126,7 @@ function node.render()
             end
         end
     end
+    
+    colored:use{color = {0, 0, 0, 1}}
+    white:draw(0, 0, NATIVE_WIDTH, 120)
 end
