@@ -39,11 +39,6 @@ function node.render()
     local now = unixnow()
     local y = 133
 
-    time_string = os.date("%Y-%m-%d %H:%M:%S", now)
-    time_width = CONFIG.font:width(time_string, 100)
-    time_x = (NATIVE_WIDTH/2)-(time_width/2)
-    CONFIG.font:write(time_x, 10, time_string, 100, 1,1,1,1)
-
     for idx, dep in ipairs(departures) do
         if dep.date > now  - fadeout then
             if now > dep.date then
@@ -129,4 +124,9 @@ function node.render()
     
     colored:use{color = {0, 0, 0, 1}}
     white:draw(0, 0, NATIVE_WIDTH, 120)
+
+    time_string = os.date("%Y-%m-%d %H:%M:%S", now)
+    time_width = CONFIG.font:width(time_string, 100)
+    time_x = (NATIVE_WIDTH/2)-(time_width/2)
+    CONFIG.font:write(time_x, 10, time_string, 100, 1,1,1,1)
 end
