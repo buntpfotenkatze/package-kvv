@@ -39,7 +39,7 @@ function node.render()
     local now = unixnow()
     local y = 133
 
-    time_string = os.date("%H:%m:%s", now)
+    time_string = os.date("%H:%M:%S", now)
     time_width = CONFIG.font:width(time_string, 100)
     time_x = (NATIVE_WIDTH/2)-(time_width/2)
     CONFIG.font:write(time_x, 10, time_string, 100, 1,1,1,1)
