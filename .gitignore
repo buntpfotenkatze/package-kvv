@@ -2,3 +2,4 @@ departures.json
 config.json
 *.xml
 *.pyc
+.venv
