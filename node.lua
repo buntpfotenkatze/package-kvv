@@ -81,9 +81,9 @@ function node.render()
 
             stop_r, stop_g, stop_b = 1,1,1
             if dep.platform == "1" then
-                arrow = " → "
+                arrow = " ↘ "
             else
-                arrow = " ← "
+                arrow = " ↖ "
             end
 
             if remaining < 10 then
